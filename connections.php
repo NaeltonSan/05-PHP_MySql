@@ -29,6 +29,13 @@ $sql = 'CREATE TABLE products (
 
 echo "<br>";
 
-$result = $conexao->query('INSERT INTO users (email) VALUE ("naelton@teste.com")');
+//$result = $conexao->query('INSERT INTO users (email) VALUE ("naelton@teste.com")');
 
-var_dump($result);
+$result = $conexao->query('SELECT * FROM users');
+
+$users = $result->fetch_all(MYSQLI_ASSOC);
+foreach ($users as $user) {
+    echo $user['id'] . ' - ' . $user['email'] . '</br>';
+}
+echo '<pre>';
+var_dump($users);
