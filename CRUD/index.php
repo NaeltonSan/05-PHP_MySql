@@ -28,7 +28,7 @@
                     <td><?php echo $user['id']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td>
-                        <a href="ver.php?id=<?php echo $user['id']; ?>">Ver</a>
+                        <a href="ver_os_dados.php?id=<?php echo $user['id']; ?>">Ver</a>
                     </td>
                 </tr>
                 <?php endforeach ?>
