@@ -29,11 +29,23 @@ $sql = 'CREATE TABLE products (
 
 echo "<br>";
 
-//$result = $conexao->query('INSERT INTO users (email) VALUE ("naelton@teste.com")');
+// $result = $conexao->query('INSERT INTO users (email) VALUE ("naelton@teste.com")');
+echo '<pre>';
 
-$result = $conexao->query('SELECT * FROM users');
 
-$users = $result->fetch_all(MYSQLI_ASSOC);
+$result = $conexao->query('SELECT * FROM users');  // selecionar todos os campos apartir da tabela users
+
+// var_dump('antes',$result->fetch_assoc());
+// echo "<ul>";
+//     while ($user = $result->fetch_assoc()) {  // a variavel $user vai receber os valores que vinher do banco.
+//         echo "<li>". $user['id'] . "-" . $user['email']. "</li>";
+//     }
+// echo "</ul>";
+// // print_r($result);
+
+// var_dump('depois',$result->fetch_assoc());
+
+$users = $result->fetch_all(MYSQLI_ASSOC); // traz o nome dos campos, neste caso ID e email, ao inves de nuemros  0,1,2...
 foreach ($users as $user) {
     echo $user['id'] . ' - ' . $user['email'] . '</br>';
 }
