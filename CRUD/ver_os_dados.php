@@ -20,6 +20,11 @@ $user = $result->fetch_assoc();
 
     <p>O id deste usuário é <?php echo $user['id']; ?></p>
 
-    <p><a href="/crud">voltar</a></p>
+    <p>
+        <a href="/PHP_SON/05-PHP_MySQL/CRUD/editar.php?id=<?php echo $user['id']; ?>">editar</a>
+        <a href="/PHP_SON/05-PHP_MySQL/CRUD/remover.php?id=<?php echo $user['id']; ?>">remover</a>
+    </p>
+
+    <p><a href="/PHP_SON/05-PHP_MySQL/CRUD">voltar</a></p>
 </body>
 </html>
